@@ -1,12 +1,14 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(motion_adaption)
 
-find_package(eigen REQUIRED)
 find_package(Boost REQUIRED)
-find_package(catkin REQUIRED COMPONENTS roscpp
+find_package(catkin REQUIRED COMPONENTS cmake_modules
+					roscpp
                                         tf
                                         tf_conversions
                                         geometry_msgs)
+
+find_package(Eigen REQUIRED)
 
 catkin_package(INCLUDE_DIRS include
                LIBRARIES ${PROJECT_NAME}
@@ -14,7 +16,7 @@ catkin_package(INCLUDE_DIRS include
                               tf
                               tf_conversions
                               geometry_msgs
-               DEPENDS eigen
+               DEPENDS Eigen
                        Boost)
 
 include_directories(include
