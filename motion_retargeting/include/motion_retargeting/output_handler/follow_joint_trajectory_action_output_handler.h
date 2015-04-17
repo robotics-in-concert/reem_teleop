@@ -53,6 +53,11 @@ public:
       initialised_ = true;
       ROS_INFO_STREAM("FollowJointTrajectoryAction Output Handler: Connected to action server.");
     }
+    else
+    {
+      ROS_INFO_STREAM("FollowJointTrajectoryAction Output Handler: Already initialised.");
+    }
+    return true;
   };
 
   virtual bool setOutput(const sensor_msgs::JointState& output_joint_states)
@@ -83,6 +88,7 @@ public:
     else
     {
       ROS_WARN_STREAM("FollowJointTrajectoryAction Output Handler: Not initialised.");
+      return false;
     }
   };
 
