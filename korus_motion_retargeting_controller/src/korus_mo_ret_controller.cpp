@@ -63,6 +63,7 @@ int main(int argc, char** argv)
     // Initialise output handler
     output_handler = motion_retargeting::OutputHandlerPtr(
                      new motion_retargeting::FollowJointTrajectoryActionHandler());
+    output_handler->init();
     // Initialise motion recorder
     motion_recorder = motion_retargeting::MotionRecorderPtr(new motion_retargeting::Rosbagger());
     // Initialise motion retargeting
