@@ -40,8 +40,9 @@ public:
                eps(0.01)
   {
     tf_input_stamp_ =  ros::Time::now();
-    tf_hand_scaled_.setIdentity();
     tf_shoulder_scaled_.setIdentity();
+    tf_elbow_scaled_.setIdentity();
+    tf_hand_scaled_.setIdentity();
     tf_hand_goal_.setIdentity();
   };
 
